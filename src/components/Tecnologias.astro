@@ -1,0 +1,52 @@
+---
+import BtnIcon from "./botones/BtnIcon.astro";
+import Codeigniter from "./iconos/Codeigniter.astro";
+import DockerIcon from "./iconos/DockerIcon.astro";
+import GitIcon from "./iconos/GitIcon.astro";
+import Laravel11 from "./iconos/Laravel11.astro";
+import MongoDbIcon from "./iconos/MongoDbIcon.astro";
+import MysqlIcon from "./iconos/MysqlIcon.astro";
+import NodeIcon from "./iconos/NodeIcon.astro";
+import ReactIcono from "./iconos/ReactIcono.astro";
+import Tailwind from "./iconos/Tailwind.astro";
+import PostgreIcon from "./iconos/PostgreeIcon.astro";
+import GitHubIcono from "./iconos/GitHubIcono.astro";
+---
+
+<section>
+  <div class="flex justify-center sm:justify-between flex-wrap gap-5 sm:gap-0">
+    <BtnIcon texto="React">
+      <ReactIcono class="w-10 sm:w-14 stroke-none" slot="svg" />
+    </BtnIcon>
+    <BtnIcon texto="Node">
+      <NodeIcon class="w-10 sm:w-14 stroke-none" slot="svg" />
+    </BtnIcon>
+    <BtnIcon texto="Laravel">
+      <Laravel11 class="w-10 sm:w-14 stroke-none" slot="svg" />
+    </BtnIcon>
+    <BtnIcon texto="Codeigniter">
+      <Codeigniter class="w-10 sm:w-14 stroke-none" slot="svg" />
+    </BtnIcon>
+    <BtnIcon texto="Tailwind CSS">
+      <Tailwind class="w-10 sm:w-14 stroke-none" slot="svg" />
+    </BtnIcon>
+    <BtnIcon texto="MySQL">
+      <MysqlIcon class="w-10 sm:w-14 stroke-none" slot="svg" />
+    </BtnIcon>
+    <BtnIcon texto="Mongo DB">
+      <MongoDbIcon class="w-10 sm:w-14 stroke-none" slot="svg" />
+    </BtnIcon>
+    <BtnIcon texto="PostgreSQL">
+      <PostgreIcon class="w-10 sm:w-14 stroke-none" slot="svg" />
+    </BtnIcon>
+    <BtnIcon texto="Git">
+      <GitIcon class="w-10 sm:w-14 stroke-none" slot="svg" />
+    </BtnIcon>
+    <BtnIcon texto="GitHub">
+      <GitHubIcono class="w-10 sm:w-14 stroke-1" slot="svg" />
+    </BtnIcon>
+    <BtnIcon texto="Docker">
+      <DockerIcon class="w-10 sm:w-14 stroke-none" slot="svg" />
+    </BtnIcon>
+  </div>
+</section>

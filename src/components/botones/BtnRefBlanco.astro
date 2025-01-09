@@ -1,0 +1,11 @@
+---
+const { referencia, texto } = Astro.props;
+---
+
+<a
+  href={referencia}
+  class="flex gap-2 px-4 py-2 border-gray-700 border rounded-lg hover:bg-white dark:hover:bg-gray-600 dark:hover:text-white dark:hover:bg-opacity-50 dark:hover:border-gray-600"
+>
+  <slot name="icono" />
+  {texto}
+</a>

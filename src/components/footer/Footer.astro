@@ -1,0 +1,39 @@
+---
+import Linkedin from "../iconos/Linkedin.astro";
+import InstagramIcon from "../iconos/InstagramIcon.astro";
+import X from "../iconos/X.astro";
+import BtnIconRef from "../botones/BtnIconRef.astro";
+import MailIcon from "../iconos/MailIcon.astro";
+---
+
+<footer class="bg-lightNavbar dark:bg-black mt-20 h-60 py-10 text-white">
+  <div class="flex justify-center items-center gap-5">
+    <BtnIconRef
+      texto="Linkedin"
+      referencia="https://www.linkedin.com/in/parodi-lucas-ivan/"
+    >
+      <Linkedin class="w-10 stroke-2" slot="svg" />
+    </BtnIconRef>
+
+    <BtnIconRef
+      texto="Instagram"
+      referencia="https://www.instagram.com/parodilucas_/"
+    >
+      <InstagramIcon class="w-8" slot="svg" />
+    </BtnIconRef>
+
+    <BtnIconRef texto="X" referencia="https://x.com/parodilucas_">
+      <X class="w-8" slot="svg" />
+    </BtnIconRef>
+    <BtnIconRef texto="Correo" referencia="mailto:lucasparodi00@gmail.com">
+      <MailIcon class="w-9 stroke-2" slot="svg" />
+    </BtnIconRef>
+  </div>
+  <p class="text-center mt-5">
+    <a
+      href="mailto:lucasparodi00@gmail.com"
+      target="_blank"
+      class="hover:text-naranjaFuerte">lucasparodi00@gmail.com</a
+    >
+  </p>
+</footer>

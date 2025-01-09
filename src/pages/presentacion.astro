@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PresentationIcon from "../components/iconos/PresentationIcono.astro";
+import LayoutInterno from "../layouts/LayoutInterno.astro";
+import BtnIcon from "../components/botones/BtnIcon.astro";
+import BtnRef from "../components/botones/BtnRef.astro";
+import DownloadIcon from "../components/iconos/DownloadIcon.astro";
+import ArrowExit from "../components/iconos/ArrowExit.astro";
+import GitHubIcono from "../components/iconos/GitHubIcono.astro";
+import Linkedin from "../components/iconos/Linkedin.astro";
+import CallToAction from "../components/CallToAction.astro";
+---
+
+<Layout>
+  <LayoutInterno>
+    <section>
+      <h1 class="text-2xl sm:text-4xl flex items-center gap-5 mb-10">
+        <PresentationIcon class="w-8 sm:w-10 text-naranjaFuerte" /> Presentacion
+      </h1>
+      <div class="h-96">
+        <iframe
+          src="https://www.youtube.com/embed/BOW_I_7Y2Y0"
+          title="Parodi Lucas - Presentacion CV"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          class="w-full h-full block"></iframe>
+      </div>
+      <div class="mt-10">
+        <CallToAction />
+        <h2></h2>
+      </div>
+    </section>
+  </LayoutInterno>
+</Layout>

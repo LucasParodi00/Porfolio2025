@@ -1,0 +1,103 @@
+---
+import type { GetStaticPaths } from "astro";
+import { iconos } from "../../helper/iconos";
+import { projects } from "../../helper/proyectos";
+import Layout from "../../layouts/Layout.astro";
+import LayoutInterno from "../../layouts/LayoutInterno.astro";
+import type { Projects } from "./types";
+import BtnRef from "../../components/botones/BtnRef.astro";
+import ArrowExit from "../../components/iconos/ArrowExit.astro";
+import ArrowLeftIcon from "../../components/iconos/ArrowLeftIcon.astro";
+import BtnRefBlanco from "../../components/botones/BtnRefBlanco.astro";
+import Calendario from "../../components/iconos/Calendario.astro";
+import GitHubIcono from "../../components/iconos/GitHubIcono.astro";
+
+export const getStaticPaths = (() => {
+  return [
+    { params: { proyecto: "pulguitas" } },
+    { params: { proyecto: "streamtech" } },
+    { params: { proyecto: "hell" } },
+    { params: { proyecto: "vegetarian" } },
+    { params: { proyecto: "vetSales" } },
+    { params: { proyecto: "gimnasio" } },
+    { params: { proyecto: "rockEdm" } },
+  ];
+}) satisfies GetStaticPaths;
+
+const { proyecto } = Astro.params;
+const contenido = projects[proyecto as keyof Projects];
+---
+
+<Layout>
+  <LayoutInterno>
+    <section>
+      <div class="flex">
+        <BtnRefBlanco texto="Proyectos" referencia="/proyectos">
+          <ArrowLeftIcon class="w-6" slot="icono" />
+        </BtnRefBlanco>
+      </div>
+    </section>
+    <article class="flex items-center gap-5 text-xs justify-between">
+      <div class="flex gap-5 items-center">
+        <div
+          class="h-12 w-12 bg-gray-600 dark:bg-gray-200 rounded-full overflow-hidden"
+        >
+          <img
+            src="/imagenes/perfil2.webp"
+            alt="Parodi Lucas - GitHub"
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <p class="text-base text-black font-semibold dark:text-white">
+            Parodi Lucas
+          </p>
+          <a
+            href="https://github.com/LucasParodi00"
+            target="_blank"
+            class="hover:text-blue-500">@LucasParodi00</a
+          >
+        </div>
+      </div>
+      <span class="sm:text-lg flex gap-2 dark:text-gray-400 items-center"
+        ><Calendario class="w-8 stroke-none" />{contenido.fecha}</span
+      >
+    </article>
+    <main>
+      <h1
+        class="text-4xl
+          border-b
+          border-gray-600
+          mb-5"
+      >
+        {contenido.nombre}
+      </h1>
+      <div
+        set:html={contenido.descripcion}
+        class="descripcion text-sm dark:text-gray-300"
+      />
+      <div class="flex flex-col sm:flex-row items-center justify-between mt-10">
+        <div class="flex gap-2">
+          <BtnRef texto="Visualizar">
+            <ArrowExit slot="icono" class="w-6" />
+          </BtnRef>
+          {
+            contenido.repositorio?.length > 0 && (
+              <BtnRef texto="Codigo" referencia={contenido.repositorio}>
+                <GitHubIcono slot="icono" class="w-6" />
+              </BtnRef>
+            )
+          }
+        </div>
+        <div class="flex gap-5 mt-10 sm:mt-0 sm:justify-end iconos">
+          {
+            contenido.tecnologias.map((item) => {
+              const IconComponent = iconos[item];
+              return <IconComponent class="w-8 sm:w-10 stroke-none" />;
+            })
+          }
+        </div>
+      </div>
+    </main>
+  </LayoutInterno>
+</Layout>

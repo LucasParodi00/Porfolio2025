@@ -1,22 +1,85 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import { Navbar } from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer.astro";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const {
+  title = "Parodi Lucas | Portfolio",
+  description = "Desarrollador Web Full Stack - Analista de Sistemas",
+  image = "/imagenes/perfil2.png",
+} = Astro.props;
+// const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html>
+  <head>
+    <script is:inline>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="author" content="Parodi Lucas" />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="porfolio, desarrollo web, react, astro, node, full stack, parodi lucas, analista de sistemas"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <link rel="icon" href="/imagenes/icono.ico" />
+    <link rel="preload" href="/src/styles/styles.css" as="style" />
+    <link rel="stylesheet" href="/src/styles/styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Parodi Lucas",
+        "url": "https://parodilucas.com",
+        "jobTitle": "Desarrollador Web Full Stack",
+        "description": "Desarrollador Web Full Stack y Analista de Sistemas",
+        "skill": [
+          "React",
+          "Astro",
+          "Node.js",
+          "Full Stack Development",
+          "Laravel",
+          "Docker",
+          "Git",
+          "GitHub",
+          "MySQL",
+          "MongoDB",
+          "PostgreSQL"
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-bodyLight text-black dark:bg-body4 dark:text-white">
+    <header>
+      <Navbar client:only />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

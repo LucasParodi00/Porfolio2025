@@ -1,0 +1,36 @@
+---
+import Calendario from "../iconos/Calendario.astro";
+const {
+  titulo = "Nombre de ejemplo de titulo adquirido",
+  imagen = "unne.webp",
+  lugar = "Universidad Nacional del Nordeste (UNNE)",
+  fecha = "2025",
+  contenido = "Titulo intermedio de la carrera licenciatura en sistemas de informacion ",
+} = Astro.props;
+---
+
+<!-- shadow-[3px_3px_4px_3px_#4a4949] -->
+<article
+  class="flex flex-col gap-2 py-10 border-b last:border-none border-gray-600 dark:text-withe"
+>
+  <div class="flex gap-4 items-center">
+    <div class="h-10 w-10 rounded-lg overflow-hidden">
+      <img
+        class="w-10 h-10 object-contain"
+        src={`/imagenes/${imagen}`}
+        alt={`Parodi Lucas - ${lugar}`}
+        loading="lazy"
+      />
+    </div>
+    <div>
+      <h3 class="text-sm sm:text-lg font-semibold">{titulo}</h3>
+      <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400"
+        >{lugar}</span
+      >
+    </div>
+  </div>
+  <span class="flex gap-2 text-xs dark:text-gray-400 items-center"
+    ><Calendario class="w-4" /> {fecha}</span
+  >
+  <p class="text-sm dark:text-gray-200">{contenido}</p>
+</article>

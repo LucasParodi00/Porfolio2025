@@ -1,0 +1,15 @@
+---
+const { referencia = "#", texto = "Texto", target = "_blank" } = Astro.props;
+---
+
+<a
+  aria-label="Enlace externo a redes sociales"
+  target={target}
+  href={referencia}
+  1
+  class="text-center py-2 px-5 flex items-center justify-center border rounded-lg gap-2 text-lg border-gray-400 bg-gray-100 hover:border-black hover:text-black
+   dark:border-rosado dark:hover:bg-gray-800 dark:hover:bg-opacity-30 dark:hover:border-gray-400 duration-500 dark:hover:text-white dark:bg-transparent"
+>
+  <slot name="icono" />
+  {texto}
+</a>
