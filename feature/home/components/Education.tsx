@@ -119,9 +119,9 @@ const EducationCard = ({
 
           <div className="flex-1 space-y-3">
             <div className="space-y-2">
-              <div className="flex flex-wrap items-start justify-between gap-2">
+              <div className="flex flex-col sm:flex-row flex-wrap items-start justify-between gap-2">
                 <div className="space-y-1 flex-1 min-w-0">
-                  <h3 className="text-lg font-semibold leading-tight text-balance">
+                  <h3 className="text-sm font-semibold leading-tight text-balance sm:text-[16px]">
                     {title}
                   </h3>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -129,7 +129,7 @@ const EducationCard = ({
                       className="h-4 w-4 shrink-0"
                       aria-hidden="true"
                     />
-                    <span>{establishment}</span>
+                    <span className="text-xs sm:text-sm">{establishment}</span>
                   </div>
                 </div>
                 <Badge variant="secondary" className="shrink-0">
@@ -143,7 +143,7 @@ const EducationCard = ({
               </div>
             </div>
 
-            <p className="text-sm leading-relaxed text-muted-foreground text-pretty">
+            <p className="text-xs leading-relaxed text-muted-foreground text-pretty">
               {description}
             </p>
           </div>

@@ -86,6 +86,31 @@ export const projectsDetail: ProjectDetail[] = [
       infrastructure: "Docker, Ubuntu",
       tools: "Git, GitHub, Postman",
     },
+    media: [
+      {
+        title: "Promoción de Tarefero en Ñande Campo",
+        date: "24 de septiembre de 2025",
+        outlet: "Ñande Campo",
+        type: "Sociales",
+        url: "https://www.instagram.com/reel/DO_AysQDlFA/",
+      },
+      {
+        title: "Entrevista radial sobre Tarefero e innovación tecnológica",
+        date: "27 de noviembre de 2025",
+        outlet: "Radio Bella Vista 92.1",
+        type: "Transmisión en vivo",
+        url: "https://www.facebook.com/RadioBV92.1/videos/680616321098277/",
+      },
+      {
+        title:
+          "Bichos de Campo presenta Tarefero, la aplicación para el sector yerbatero",
+        date: "21 de agosto de 2025",
+        outlet: "Bichos de Campo",
+        type: "Nota periodística",
+        url: "https://bichosdecampo.com/la-yerba-mate-ya-tiene-su-propia-aplicacion-y-se-llama-tareferos-surgio-del-anhelo-de-dos-hermanos-obsesionados-por-profesionalizar-mas-la-actividad/",
+      },
+    ],
+
     methodology: {
       description:
         "El desarrollo de Tarefero se llevó a cabo utilizando la metodología Scrum. Dentro del equipo, cumplí el rol de Scrum Master, liderando a dos desarrolladores, y a la vez participé activamente como desarrollador del proyecto. ",

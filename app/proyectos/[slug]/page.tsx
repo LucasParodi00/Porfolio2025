@@ -307,7 +307,7 @@ export default function ProjectDetailPage() {
 
       {/* ================= MEDIOS Y PRENSA ================= */}
       {project.media && project.media.length > 0 && (
-        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <section className="mx-auto py-20">
           <div className="flex items-center justify-center gap-3 mb-12">
             <Newspaper className="h-8 w-8 text-primary" />
             <h2 className="font-bold text-3xl lg:text-4xl text-center">
@@ -315,10 +315,13 @@ export default function ProjectDetailPage() {
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {project.media?.map((item, i) => (
-              <Card key={i} className="group hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
+              <Card
+                key={i}
+                className="group hover:shadow-lg transition-shadow relative"
+              >
+                <CardContent className="py-4">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <p className="text-xs text-muted-foreground mb-1">
@@ -332,7 +335,10 @@ export default function ProjectDetailPage() {
                       </p>
                     </div>
                     {item.type && (
-                      <Badge variant="outline" className="ml-2">
+                      <Badge
+                        variant="outline"
+                        className="ml-2 absolute right-2 top-5"
+                      >
                         {item.type}
                       </Badge>
                     )}

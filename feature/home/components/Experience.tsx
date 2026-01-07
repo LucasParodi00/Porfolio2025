@@ -7,12 +7,12 @@ export const Experience = () => {
     <section aria-label="Experiencia">
       <SectionTitle Icon={CheckCheck} title="Experiencia" />
       <div className="mb-3">
-        <h4 className="text-lg sm:text-xl font-extralight text-gray-400">
+        <h4 className="text-xl sm:text-3xl font-extralight text-gray-400">
           Freelancer
         </h4>
         <span className="text-xs sm:text-base">2021 - Actualidad</span>
       </div>
-      <div className="font-extralight text-xs lg:text-base px-2">
+      <div className="font-extralight text-sm lg:text-base px-2">
         <ul className="list-disc marker:text-pink-600 flex flex-col gap-2">
           <li>
             <Highlight>
